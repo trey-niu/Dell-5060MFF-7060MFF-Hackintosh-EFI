@@ -4,13 +4,15 @@
 
 [2022-03-25] 经测试，5060MFF (IPCFL-BS/EK) 和 7060MFF标压版（IPCFL-BS 65W）均可正常使用。
 
+## -1. TL; DL 太长不看版
+
+[安装步骤 / Install Instructions](#TLDR)
+
 ## 0. 感谢
 
 感谢 [OpenCore Bootloader](https://github.com/acidanthera/OpenCorePkg) 。
 
-感谢上一版作者：[minhtranbaolong](https://github.com/minhtranbaolong) 。
-
-感谢参考过的其他作者：[chencaidy](https://github.com/chencaidy/Hackintosh-OC-Optiplex-5060MFF)、[uouuou](https://github.com/uouuou/OpenCore_DELL_5060MFF_EFI) 。
+感谢参考过的其他作者：[minhtranbaolong](https://github.com/minhtranbaolong)、[chencaidy](https://github.com/chencaidy/Hackintosh-OC-Optiplex-5060MFF)、[uouuou](https://github.com/uouuou/OpenCore_DELL_5060MFF_EFI) 。
 
 感谢 [黑果小兵](https://blog.daliansky.net) 提供的镜像，以及[驱动核心显卡的教程](https://blog.daliansky.net/Tutorial-Using-Hackintool-to-open-the-correct-pose-of-the-8th-generation-core-display-HDMI-or-DVI-output.html) 。
 
@@ -50,9 +52,9 @@
 
 ## 5. EFI 概要
 
-- OpenCore 0.7.6
+- OpenCore 0.7.8
 
-Kexts：
+### Kexts：
 - Lilu ~~1.5.7~~ 1.6.0
 - VirtualSMC ~~1.2.7~~ 1.2.8
 - Airportitlwm 2.0.0
@@ -76,8 +78,8 @@ Kexts：
 - 声卡ID：42000000 (DATA类型)
 
 
-## 6. 安装步骤：
-1. 调整 BIOS 设置
+## <span id="TLDR"> 6. 安装步骤：</span>
+### 6.1 调整 BIOS 设置
 - `General` - `Advanced Boot Options` 取消勾选 `Enable Legacy Option ROMs`
 - `System Configuration` - `SATA Operation` 选择 `AHCI`
 - （部分BIOS无此选项）`System Configuration` - `Serial Port` 选择 `Disabled` 
@@ -86,15 +88,15 @@ Kexts：
 - `Intel Software Guard Extensions` - `Intel SGX Enable` 选择 `Disabled`
 - `Virtualization Support` - `Virtualization` 勾选 `Enable Intel Virtualization Technology`
 - `Virtualization Support` - `VT for Direct I/O` 取消勾选 `Enable VT for Direct I/O`
-2. 使用 `Grub EFI` 启动，禁用 `CFG Lock` ，修改 `DVMT` 为 64MB。参考 [机汤TV](https://space.bilibili.com/485711932?spm_id_from=333.788.b_765f7570696e666f.1) 提供的 [禁用 `CFG Lock` 和修改 `DVMT`的教程](https://www.bilibili.com/video/BV1WT4y1M79x?from=search&seid=419404128670007921&spm_id_from=333.337.0.0) 时间轴 09:52处。
+### 6.2 使用 `Grub EFI` 启动，禁用 `CFG Lock` ，修改 `DVMT` 为 64MB。参考 [机汤TV](https://space.bilibili.com/485711932?spm_id_from=333.788.b_765f7570696e666f.1) 提供的 [禁用 `CFG Lock` 和修改 `DVMT`的教程](https://www.bilibili.com/video/BV1WT4y1M79x?from=search&seid=419404128670007921&spm_id_from=333.337.0.0) 时间轴 09:52处。
 ```
 setup var 0x5BE 0x0
 setup_var 0x8DC 0x2
 ```
-3. 下载 macOS 镜像，写盘，复制 `OpenCore EFI` 文件夹至U盘的 EFI 分区，将文件夹重命名为 "EFI"。
-4. 启动系统，选择 `Install macOS`。
-5. 复制 `OpenCore EFI` 到本机硬盘的 `ESP` 分区，将文件夹重命名为 "EFI"。。
-6. （可选）安装 [Loopback](http://www.pc6.com/mac/225861.html)，管理 HDMI 输出的音量 (默认是最大音量，请保护耳朵)。（[2022-03-25] 在 `Monterey 12.2` 以后 Loopback 需使用 2.8 版本或以上。）
+### 6.3 下载 macOS 镜像，写盘，复制 `OpenCore EFI` 文件夹至U盘的 EFI 分区，将文件夹重命名为 "EFI"。
+### 6.4 启动系统，选择 `Install macOS`。
+### 6.5 复制 `OpenCore EFI` 到本机硬盘的 `ESP` 分区，将文件夹重命名为 "EFI"。
+### 6.6 （可选）安装 [Loopback](http://www.pc6.com/mac/225861.html)，管理 HDMI 输出的音量 (默认是最大音量，请保护耳朵)。（[2022-03-25] 在 `Monterey 12.2` 以后 Loopback 需使用 2.8 版本或以上。）
 
 ## 7. 黑苹果不易，且行且珍惜。
 或许哪天苹果不提供对 `Intel` CPU 的支持了，黑苹果就🈚️了。

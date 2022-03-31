@@ -45,7 +45,7 @@
 ## 3. 已知问题:
 - &cross; ~~BlueTooth (无法正常使用)~~ ( [2021-12-15] 参考 [华米OV的教程](https://zhuanlan.zhihu.com/p/404324240) 已解决 )
 - &cross; （推测是机器平台问题）视频输出需使用 DP 转 HDMI 主动式转换器（可以随 HDMI 输出音频，使用 [Loopback](http://www.pc6.com/mac/225861.html) 管理音量），或 DP 转 VGA 转换器，或使用戴尔 HDMI 扩展卡。在 Windows 下无上述问题。
-- &cross; 音频输出问题，使用单线 3.5mm 耳机输出音频会出现失真，见 [Issue 1](https://github.com/ShuyNiu/Dell-5060MFF-7060MFF-Hackintosh-EFI/issues/1)。
+- &cross; ~~音频输出问题，使用单线 3.5mm 耳机输出音频会出现失真，见 [Issue 1](https://github.com/ShuyNiu/Dell-5060MFF-7060MFF-Hackintosh-EFI/issues/1)。~~ （[2022-03-31] 删除 `boot-args` 中重复注入的声卡ID，音频输出正常，选用 11 ）
 
 ## 4. 关键设置(已集成到EFI中，个人备忘)：
 - 驱动 HDMI 输出：参考 [黑果小兵的驱动8代核显教程](https://blog.daliansky.net/Tutorial-Using-Hackintool-to-open-the-correct-pose-of-the-8th-generation-core-display-HDMI-or-DVI-output.html) ，修改平台ID、总线ID和接口类型，生成补丁后只把显卡的部分 `<key>PciRoot(0x0)/Pci(0x2,0x0)</key>` 填入 `config.plist` 。
@@ -77,7 +77,7 @@
 
 仿冒：
 - 平台ID：0x3E9B0007
-- 声卡ID：42000000 (DATA类型)
+- 声卡ID：42000000 (DATA类型，11)
 
 
 ## <span id="TLDR"> 6. 安装步骤：</span>

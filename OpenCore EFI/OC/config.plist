@@ -1036,7 +1036,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Hg==</data>
                     <key>boot-args</key>
-                    <string>keepsyms=1 debug=0x100 -wegnoegpu alcid=3</string>
+                    <string>keepsyms=1 debug=0x100 -wegnoegpu</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>

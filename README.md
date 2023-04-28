@@ -2,7 +2,15 @@
 
 成功运行 `Monterey 12.3`，三卡（ Intel网卡 ） 、HDMI、睡眠、AirDrop正常，暂时完美。
 
-[2022-03-25] 经测试，5060MFF (IPCFL-BS/EK) 和 7060MFF标压版（IPCFL-BS 65W）均可正常使用。
+[2023-04-28]
+
+因为人在国外，机器不在手边 + CPU卖了，如果有需要的朋友可以下载这个EFI然后使用[OCAT](https://github.com/ic005k/OCAuxiliaryTools)更新`kext`和`OpenCore`即可使用。
+
+Ventura兼容性未知，如果有朋友测试了欢迎告知。shuy.niu@gmail.com
+
+[2022-03-25]
+
+经测试，5060MFF (IPCFL-BS/EK) 和 7060MFF标压版（IPCFL-BS 65W）均可正常使用。
 
 ## -1. TL; DL 太长不看版
 
